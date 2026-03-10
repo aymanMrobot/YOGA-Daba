@@ -236,6 +236,25 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+
+              <div className="mt-12 bg-muted/50 p-6 rounded-lg">
+                <h4 className="font-serif text-xl mb-4">Booking conditions for groups:</h4>
+                <ul className="text-sm text-muted-foreground font-light space-y-2 list-disc pl-4 mb-6">
+                  <li>Pre-booking of dates can be granted for a 1-month period</li>
+                  <li>Minimum stay: 5 nights</li>
+                  <li>Deposit of 30% to confirm booking</li>
+                  <li>Balance of 70% to be wired 1 month before arrival</li>
+                  <li>A variation of 20% in the number of participants is allowed</li>
+                </ul>
+
+                <h4 className="font-serif text-lg mb-2 text-foreground/80">Cancellation Policy:</h4>
+                <p className="text-sm text-muted-foreground font-light mb-4 leading-relaxed">
+                  In case of cancelation 60 days (or more) before the retreat, a voucher equivalent to the deposit will be issued and will be valid 12 months. The deposit is lost for any cancelation done less than 60 days before the retreat.
+                </p>
+                <ul className="text-sm text-muted-foreground font-light list-disc pl-4">
+                  <li>Cases of force majeure are dealt on a case-by-case basis</li>
+                </ul>
+              </div>
             </div>
 
             <div className="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6">

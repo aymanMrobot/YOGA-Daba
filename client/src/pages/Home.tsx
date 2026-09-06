@@ -42,8 +42,8 @@ export default function Home() {
             <a href="#experience" className="hover:text-primary transition-colors">Experience</a>
             <a href="#accommodation" className="hover:text-primary transition-colors">Stay</a>
             <a href="#wellness" className="hover:text-primary transition-colors">Wellness</a>
-            <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-none px-6">
-              Inquire
+            <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-none px-6">
+              <a href="#contact">Inquire</a>
             </Button>
           </div>
         </div>
@@ -207,7 +207,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row gap-16">
             <div className="md:w-1/3">
-              <span className="text-primary font-sans text-xs tracking-[0.2em] uppercase">2025 Rates</span>
+              <span className="text-primary font-sans text-xs tracking-[0.2em] uppercase">Retreat Packages</span>
               <h2 className="font-serif text-4xl md:text-5xl mt-4 mb-8">Group Retreat Packages</h2>
               <p className="text-muted-foreground font-light mb-8">
                 Full board basis including accommodation, all meals (vegetarian/vegan friendly), and exclusive usage of facilities for larger groups.
@@ -259,52 +259,82 @@ export default function Home() {
 
             <div className="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Junior Suite / Triple Shared */}
-              <div className="border border-border p-8 hover:border-primary/50 transition-colors duration-300 bg-card">
-                <h3 className="font-serif text-2xl mb-2">Junior Suite / Triple</h3>
-                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-6">Shared Occupancy • Per Person / Night</p>
+              <div className="border border-border p-8 hover:border-primary/50 transition-colors duration-300 bg-card flex flex-col justify-between">
+                <div>
+                  <h3 className="font-serif text-2xl mb-2">Junior Suite / Triple</h3>
+                  <p className="text-xs uppercase tracking-widest text-muted-foreground mb-6">Shared Occupancy • 3 Guests</p>
 
-                <div className="space-y-4">
-                  <div className="flex justify-between items-baseline border-b border-border/50 pb-2">
-                    <span className="font-sans text-sm">Low Season</span>
-                    <span className="font-serif text-xl">€95</span>
-                  </div>
-                  <div className="flex justify-between items-baseline border-b border-border/50 pb-2">
-                    <span className="font-sans text-sm">High Season</span>
-                    <span className="font-serif text-xl">€120</span>
-                  </div>
-                  <div className="flex justify-between items-baseline pb-2">
-                    <span className="font-sans text-sm">Very High Season</span>
-                    <span className="font-serif text-xl">€149</span>
+                  <div className="space-y-3 text-sm text-muted-foreground font-light mb-8">
+                    <div className="flex items-center gap-2 border-b border-border/50 pb-2">
+                      <Leaf className="w-4 h-4 text-primary shrink-0" />
+                      <span>Full board: vegetarian & vegan organic meals</span>
+                    </div>
+                    <div className="flex items-center gap-2 border-b border-border/50 pb-2">
+                      <Sun className="w-4 h-4 text-primary shrink-0" />
+                      <span>Full access to Yoga Shala & rooftop practice deck</span>
+                    </div>
+                    <div className="flex items-center gap-2 border-b border-border/50 pb-2">
+                      <Moon className="w-4 h-4 text-primary shrink-0" />
+                      <span>Ensuite private bathroom & Moroccan amenities</span>
+                    </div>
+                    <div className="flex items-center gap-2 pb-2">
+                      <Calendar className="w-4 h-4 text-primary shrink-0" />
+                      <span>Dedicated retreat hosting & daily housekeeping</span>
+                    </div>
                   </div>
                 </div>
-                <p className="text-xs text-muted-foreground mt-4 italic">
-                  *Very High Season: April, Oct, Dec 20 - Jan 5
-                </p>
+
+                <div className="pt-4 border-t border-border">
+                  <p className="text-xs text-muted-foreground italic mb-4">
+                    Custom group quotes & seasonal availability upon request.
+                  </p>
+                  <a
+                    href="#contact"
+                    className="inline-block w-full text-center py-3 px-4 border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors uppercase text-xs tracking-widest font-medium"
+                  >
+                    Inquire for Rates
+                  </a>
+                </div>
               </div>
 
               {/* Junior Suite / Double or Twin */}
-              <div className="border border-border p-8 hover:border-primary/50 transition-colors duration-300 bg-card relative overflow-hidden">
+              <div className="border border-border p-8 hover:border-primary/50 transition-colors duration-300 bg-card relative overflow-hidden flex flex-col justify-between">
                 <div className="absolute top-0 right-0 bg-primary text-primary-foreground text-[10px] uppercase tracking-widest px-3 py-1">Popular</div>
-                <h3 className="font-serif text-2xl mb-2">Junior Suite / Double</h3>
-                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-6">Shared Occupancy • Per Person / Night</p>
+                <div>
+                  <h3 className="font-serif text-2xl mb-2">Junior Suite / Double</h3>
+                  <p className="text-xs uppercase tracking-widest text-muted-foreground mb-6">Double or Twin Occupancy</p>
 
-                <div className="space-y-4">
-                  <div className="flex justify-between items-baseline border-b border-border/50 pb-2">
-                    <span className="font-sans text-sm">Low Season</span>
-                    <span className="font-serif text-xl">€140</span>
-                  </div>
-                  <div className="flex justify-between items-baseline border-b border-border/50 pb-2">
-                    <span className="font-sans text-sm">High Season</span>
-                    <span className="font-serif text-xl">€160</span>
-                  </div>
-                  <div className="flex justify-between items-baseline pb-2">
-                    <span className="font-sans text-sm">Very High Season</span>
-                    <span className="font-serif text-xl">€189</span>
+                  <div className="space-y-3 text-sm text-muted-foreground font-light mb-8">
+                    <div className="flex items-center gap-2 border-b border-border/50 pb-2">
+                      <Leaf className="w-4 h-4 text-primary shrink-0" />
+                      <span>Full board: vegetarian & vegan organic meals</span>
+                    </div>
+                    <div className="flex items-center gap-2 border-b border-border/50 pb-2">
+                      <Sun className="w-4 h-4 text-primary shrink-0" />
+                      <span>Full access to Yoga Shala & rooftop practice deck</span>
+                    </div>
+                    <div className="flex items-center gap-2 border-b border-border/50 pb-2">
+                      <Moon className="w-4 h-4 text-primary shrink-0" />
+                      <span>Ensuite private bath with garden or pool view</span>
+                    </div>
+                    <div className="flex items-center gap-2 pb-2">
+                      <Calendar className="w-4 h-4 text-primary shrink-0" />
+                      <span>Extra bed options available upon request</span>
+                    </div>
                   </div>
                 </div>
-                <p className="text-xs text-muted-foreground mt-4 italic">
-                  *Extra bed in same room: €80/person
-                </p>
+
+                <div className="pt-4 border-t border-border">
+                  <p className="text-xs text-muted-foreground italic mb-4">
+                    Custom group quotes & seasonal availability upon request.
+                  </p>
+                  <a
+                    href="#contact"
+                    className="inline-block w-full text-center py-3 px-4 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors uppercase text-xs tracking-widest font-medium"
+                  >
+                    Inquire for Rates
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -355,7 +385,19 @@ export default function Home() {
               <h4 className="font-serif text-lg mb-6">Contact</h4>
               <ul className="space-y-4 text-sm text-muted-foreground font-light">
                 <li>Route aurika Km 12<br />Mohamadia 9<br />tameslouht 42312</li>
-                <li><a href="tel:+212655699126" className="hover:text-primary transition-colors">+212 655 699 126</a></li>
+                <li>
+                  <a href="tel:+212676777790" className="hover:text-primary transition-colors block font-medium">
+                    +212 6 76 77 77 90
+                  </a>
+                  <a
+                    href="https://wa.me/212676777790"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-primary hover:underline inline-block mt-0.5"
+                  >
+                    Chat on WhatsApp →
+                  </a>
+                </li>
                 <li><a href="mailto:info@dabavillage.com" className="hover:text-primary transition-colors">info@dabavillage.com</a></li>
               </ul>
             </div>

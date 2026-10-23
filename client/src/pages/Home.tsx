@@ -1,6 +1,19 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { ArrowRight, Calendar, Leaf, Moon, Sun } from "lucide-react";
+import {
+  ArrowRight,
+  BedDouble,
+  Calendar,
+  Check,
+  Coffee,
+  Leaf,
+  Moon,
+  ShieldCheck,
+  Sparkles,
+  Sun,
+  Utensils,
+  UtensilsCrossed,
+} from "lucide-react";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -90,7 +103,7 @@ export default function Home() {
       </header>
 
       {/* Introduction */}
-      <section className="py-24 md:py-32 bg-background relative overflow-hidden">
+      <section id="accommodation" className="py-24 md:py-32 bg-background relative overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -203,138 +216,371 @@ export default function Home() {
       </section>
 
       {/* Pricing & Packages */}
-      <section id="retreats" className="py-24 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row gap-16">
-            <div className="md:w-1/3">
-              <span className="text-primary font-sans text-xs tracking-[0.2em] uppercase">Retreat Packages</span>
-              <h2 className="font-serif text-4xl md:text-5xl mt-4 mb-8">Group Retreat Packages</h2>
-              <p className="text-muted-foreground font-light mb-8">
-                Full board basis including accommodation, all meals (vegetarian/vegan friendly), and exclusive usage of facilities for larger groups.
-              </p>
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="bg-primary/10 p-2 rounded-full text-primary mt-1">
-                    <Calendar className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <h4 className="font-serif text-lg">Exclusive Use</h4>
-                    <p className="text-sm text-muted-foreground font-light">
-                      Groups of 20+ rooms get exclusivity of the entire premises. Smaller groups (12-20) get exclusive usage of the Shala.
-                    </p>
-                  </div>
+      <section id="retreats" className="py-24 md:py-32 bg-background">
+        <div className="container mx-auto px-4 max-w-7xl">
+          {/* Header */}
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-primary font-sans text-xs tracking-[0.25em] uppercase font-semibold">
+              Group Stays
+            </span>
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mt-4 mb-6">
+              Group Accommodation <br className="hidden sm:inline" />
+              <span className="italic font-light text-primary">& Catering Package</span>
+            </h2>
+            <p className="text-muted-foreground font-light text-base md:text-lg leading-relaxed">
+              Bring your group together at Daba Village. One simple rate covers comfortable accommodation, freshly prepared meals and relaxing breaks throughout the day, so everyone can settle in and enjoy their stay.
+            </p>
+          </div>
+
+          {/* Every Package Includes */}
+          <div className="mb-20 bg-muted/40 border border-border/80 p-8 md:p-12 rounded-sm shadow-xs">
+            <div className="text-center mb-10">
+              <span className="text-xs uppercase tracking-[0.25em] text-primary font-medium block">
+                Every Package Includes
+              </span>
+              <div className="w-12 h-px bg-primary/40 mx-auto mt-2"></div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="flex items-start gap-4">
+                <div className="bg-primary/10 p-3 rounded-full text-primary shrink-0">
+                  <BedDouble className="w-5 h-5" />
                 </div>
-                <div className="flex items-start gap-4">
-                  <div className="bg-primary/10 p-2 rounded-full text-primary mt-1">
-                    <Leaf className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <h4 className="font-serif text-lg">Teacher Benefits</h4>
-                    <p className="text-sm text-muted-foreground font-light">
-                      Complementary stay for the Teacher/Organizer for groups over 15 people.
-                    </p>
-                  </div>
+                <div>
+                  <h4 className="font-serif text-lg font-medium">Accommodation</h4>
+                  <p className="text-sm text-muted-foreground font-light">In double or triple rooms</p>
                 </div>
               </div>
 
-              <div className="mt-12 bg-muted/50 p-6 rounded-lg">
-                <h4 className="font-serif text-xl mb-4">Booking conditions for groups:</h4>
-                <ul className="text-sm text-muted-foreground font-light space-y-2 list-disc pl-4 mb-6">
-                  <li>Pre-booking of dates can be granted for a 1-month period</li>
-                  <li>Minimum stay: 5 nights</li>
-                  <li>Deposit of 30% to confirm booking</li>
-                  <li>Balance of 70% to be wired 1 month before arrival</li>
-                  <li>A variation of 20% in the number of participants is allowed</li>
-                </ul>
+              <div className="flex items-start gap-4">
+                <div className="bg-primary/10 p-3 rounded-full text-primary shrink-0">
+                  <Utensils className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="font-serif text-lg font-medium">Full Breakfast</h4>
+                  <p className="text-sm text-muted-foreground font-light">Served each morning</p>
+                </div>
+              </div>
 
-                <h4 className="font-serif text-lg mb-2 text-foreground/80">Cancellation Policy:</h4>
-                <p className="text-sm text-muted-foreground font-light mb-4 leading-relaxed">
-                  In case of cancelation 60 days (or more) before the retreat, a voucher equivalent to the deposit will be issued and will be valid 12 months. The deposit is lost for any cancelation done less than 60 days before the retreat.
-                </p>
-                <ul className="text-sm text-muted-foreground font-light list-disc pl-4">
-                  <li>Cases of force majeure are dealt on a case-by-case basis</li>
+              <div className="flex items-start gap-4">
+                <div className="bg-primary/10 p-3 rounded-full text-primary shrink-0">
+                  <UtensilsCrossed className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="font-serif text-lg font-medium">Light Lunch</h4>
+                  <p className="text-sm text-muted-foreground font-light">With sandwiches and soft drinks</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="bg-primary/10 p-3 rounded-full text-primary shrink-0">
+                  <Sparkles className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="font-serif text-lg font-medium">Three-Course Dinner</h4>
+                  <p className="text-sm text-muted-foreground font-light">From a set menu</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="bg-primary/10 p-3 rounded-full text-primary shrink-0">
+                  <Coffee className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="font-serif text-lg font-medium">Two Tea & Coffee Breaks</h4>
+                  <p className="text-sm text-muted-foreground font-light">Throughout the day</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="bg-primary/10 p-3 rounded-full text-primary shrink-0">
+                  <ShieldCheck className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="font-serif text-lg font-medium">Local Tourist Taxes</h4>
+                  <p className="text-sm text-muted-foreground font-light">Included in the rate</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Package Rates Header */}
+          <div className="text-center mb-12">
+            <span className="text-primary font-sans text-xs tracking-[0.25em] uppercase font-semibold">
+              Package Rates
+            </span>
+            <p className="font-serif text-xl italic text-muted-foreground mt-1">per person, per night</p>
+          </div>
+
+          {/* Pricing Cards */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch mb-20">
+            {/* Low Season */}
+            <div className="border border-border bg-card p-8 md:p-10 rounded-sm hover:border-primary/50 transition-all duration-300 flex flex-col justify-between">
+              <div>
+                <span className="text-xs font-sans tracking-widest uppercase text-muted-foreground block mb-2">
+                  All other dates
+                </span>
+                <h3 className="font-serif text-3xl mb-6">Low Season</h3>
+
+                <div className="mb-8 pb-6 border-b border-border/60">
+                  <div className="flex items-baseline">
+                    <span className="font-serif text-3xl text-foreground/70 mr-1.5">€</span>
+                    <span className="font-serif text-6xl md:text-7xl font-normal text-foreground">169</span>
+                  </div>
+                  <span className="text-xs text-muted-foreground tracking-widest uppercase block mt-2">
+                    per person, per night
+                  </span>
+                </div>
+
+                <ul className="space-y-3 text-sm text-muted-foreground font-light mb-8">
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-primary shrink-0" />
+                    <span>Double or triple room accommodation</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-primary shrink-0" />
+                    <span>Full breakfast & light sandwich lunch</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-primary shrink-0" />
+                    <span>Three-course set menu dinner</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-primary shrink-0" />
+                    <span>2 tea & coffee breaks throughout the day</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-primary shrink-0" />
+                    <span>Access to Yoga Shala & rooftop practice deck</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-primary shrink-0" />
+                    <span>Local tourist taxes included</span>
+                  </li>
                 </ul>
+              </div>
+
+              <div className="pt-4 border-t border-border/60">
+                <a
+                  href="#contact"
+                  className="inline-block w-full text-center py-3.5 px-4 border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors uppercase text-xs tracking-widest font-medium"
+                >
+                  Inquire for Low Season
+                </a>
               </div>
             </div>
 
-            <div className="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Junior Suite / Triple Shared */}
-              <div className="border border-border p-8 hover:border-primary/50 transition-colors duration-300 bg-card flex flex-col justify-between">
-                <div>
-                  <h3 className="font-serif text-2xl mb-2">Junior Suite / Triple</h3>
-                  <p className="text-xs uppercase tracking-widest text-muted-foreground mb-6">Shared Occupancy • 3 Guests</p>
+            {/* High Season */}
+            <div className="border border-primary/50 bg-card p-8 md:p-10 rounded-sm relative flex flex-col justify-between shadow-sm">
+              <div className="absolute top-0 right-0 bg-primary text-primary-foreground text-[10px] uppercase tracking-widest px-3 py-1 font-medium">
+                Popular
+              </div>
+              <div>
+                <span className="text-xs font-sans tracking-widest uppercase text-primary font-medium block mb-2">
+                  April, May & October
+                </span>
+                <h3 className="font-serif text-3xl mb-6">High Season</h3>
 
-                  <div className="space-y-3 text-sm text-muted-foreground font-light mb-8">
-                    <div className="flex items-center gap-2 border-b border-border/50 pb-2">
-                      <Leaf className="w-4 h-4 text-primary shrink-0" />
-                      <span>Full board: vegetarian & vegan organic meals</span>
-                    </div>
-                    <div className="flex items-center gap-2 border-b border-border/50 pb-2">
-                      <Sun className="w-4 h-4 text-primary shrink-0" />
-                      <span>Full access to Yoga Shala & rooftop practice deck</span>
-                    </div>
-                    <div className="flex items-center gap-2 border-b border-border/50 pb-2">
-                      <Moon className="w-4 h-4 text-primary shrink-0" />
-                      <span>Ensuite private bathroom & Moroccan amenities</span>
-                    </div>
-                    <div className="flex items-center gap-2 pb-2">
-                      <Calendar className="w-4 h-4 text-primary shrink-0" />
-                      <span>Dedicated retreat hosting & daily housekeeping</span>
-                    </div>
+                <div className="mb-8 pb-6 border-b border-border/60">
+                  <div className="flex items-baseline">
+                    <span className="font-serif text-3xl text-foreground/70 mr-1.5">€</span>
+                    <span className="font-serif text-6xl md:text-7xl font-normal text-foreground">195</span>
                   </div>
+                  <span className="text-xs text-muted-foreground tracking-widest uppercase block mt-2">
+                    per person, per night
+                  </span>
                 </div>
 
-                <div className="pt-4 border-t border-border">
-                  <p className="text-xs text-muted-foreground italic mb-4">
-                    Custom group quotes & seasonal availability upon request.
-                  </p>
-                  <a
-                    href="#contact"
-                    className="inline-block w-full text-center py-3 px-4 border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors uppercase text-xs tracking-widest font-medium"
-                  >
-                    Inquire for Rates
-                  </a>
+                <ul className="space-y-3 text-sm text-muted-foreground font-light mb-8">
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-primary shrink-0" />
+                    <span>Prime Moroccan spring & autumn weather</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-primary shrink-0" />
+                    <span>Double or triple room accommodation</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-primary shrink-0" />
+                    <span>Full breakfast & light sandwich lunch</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-primary shrink-0" />
+                    <span>Three-course set menu dinner</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-primary shrink-0" />
+                    <span>2 tea & coffee breaks throughout the day</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-primary shrink-0" />
+                    <span>Access to Yoga Shala & rooftop practice deck</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-primary shrink-0" />
+                    <span>Local tourist taxes included</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="pt-4 border-t border-border/60">
+                <a
+                  href="#contact"
+                  className="inline-block w-full text-center py-3.5 px-4 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors uppercase text-xs tracking-widest font-medium"
+                >
+                  Inquire for High Season
+                </a>
+              </div>
+            </div>
+
+            {/* Festive Season */}
+            <div className="bg-[#353c29] text-[#f7f3eb] p-8 md:p-10 rounded-sm relative flex flex-col justify-between shadow-md border border-[#485338]">
+              <div className="absolute top-0 right-0 bg-[#d4a359] text-black text-[10px] uppercase tracking-widest px-3 py-1 font-semibold">
+                Holiday Stay
+              </div>
+              <div>
+                <span className="text-xs font-sans tracking-widest uppercase text-[#d4a359] font-medium block mb-2">
+                  21 December – 3 January
+                </span>
+                <h3 className="font-serif text-3xl mb-6 text-white">Festive Season</h3>
+
+                <div className="mb-6 pb-6 border-b border-white/15">
+                  <div className="flex items-baseline">
+                    <span className="font-serif text-3xl text-white/70 mr-1.5">€</span>
+                    <span className="font-serif text-6xl md:text-7xl font-normal text-white">235</span>
+                  </div>
+                  <span className="text-xs text-white/70 tracking-widest uppercase block mt-2">
+                    per person, per night
+                  </span>
+                </div>
+
+                {/* Special New Year's Eve Note */}
+                <div className="mb-6 p-3.5 bg-black/30 border border-white/15 rounded-xs text-xs text-white/95 leading-relaxed">
+                  <span className="font-medium text-[#d4a359] block mb-0.5">New Year’s Eve, 31 December</span>
+                  Quoted separately at <strong className="text-white font-semibold">€239</strong> per person
+                </div>
+
+                <ul className="space-y-3 text-sm text-white/85 font-light mb-8">
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-[#d4a359] shrink-0" />
+                    <span>Magical year-end festive atmosphere</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-[#d4a359] shrink-0" />
+                    <span>Double or triple room accommodation</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-[#d4a359] shrink-0" />
+                    <span>Full breakfast & light sandwich lunch</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-[#d4a359] shrink-0" />
+                    <span>Three-course set menu dinner</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-[#d4a359] shrink-0" />
+                    <span>2 tea & coffee breaks throughout the day</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-[#d4a359] shrink-0" />
+                    <span>Access to Yoga Shala & retreat grounds</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-[#d4a359] shrink-0" />
+                    <span>Local tourist taxes included</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="pt-4 border-t border-white/15">
+                <a
+                  href="#contact"
+                  className="inline-block w-full text-center py-3.5 px-4 bg-[#d4a359] text-black hover:bg-[#e0b26c] transition-colors uppercase text-xs tracking-widest font-semibold"
+                >
+                  Inquire for Festive Season
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Booking Conditions & Exclusive Use (Domaine Hire) */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+            {/* Booking Conditions */}
+            <div className="lg:col-span-7 bg-muted/40 border border-border p-8 md:p-10 rounded-sm flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-3 mb-6">
+                  <Calendar className="w-5 h-5 text-primary" />
+                  <h3 className="font-serif text-2xl md:text-3xl">Booking Conditions</h3>
+                </div>
+
+                <div className="space-y-4 text-sm font-light leading-relaxed">
+                  <div className="pb-3 border-b border-border/60">
+                    <span className="font-medium text-foreground block mb-0.5">Group size</span>
+                    <p className="text-muted-foreground">From 10 guests up to 30 guests at the published rates.</p>
+                  </div>
+
+                  <div className="pb-3 border-b border-border/60">
+                    <span className="font-medium text-foreground block mb-0.5">Minimum stay</span>
+                    <p className="text-muted-foreground">Two nights.</p>
+                  </div>
+
+                  <div className="pb-3 border-b border-border/60">
+                    <span className="font-medium text-foreground block mb-0.5">Rooms</span>
+                    <p className="text-muted-foreground">Double or triple rooms, allocated by availability and group size.</p>
+                  </div>
+
+                  <div className="pb-3 border-b border-border/60">
+                    <span className="font-medium text-foreground block mb-0.5">Larger groups</span>
+                    <p className="text-muted-foreground">Groups of more than 30 guests receive a tailored quotation based on total group size and accommodation requirements.</p>
+                  </div>
+
+                  <div className="pb-3 border-b border-border/60">
+                    <span className="font-medium text-foreground block mb-0.5">Teacher & Organizer Benefit</span>
+                    <p className="text-muted-foreground">Complimentary stay for the Teacher / Organizer for groups over 15 people.</p>
+                  </div>
+
+                  <div className="pt-1">
+                    <span className="font-medium text-foreground block mb-0.5">Cancellation Policy</span>
+                    <p className="text-muted-foreground text-xs leading-relaxed">
+                      In case of cancellation 60 days (or more) before the retreat, a voucher equivalent to the deposit will be issued and will be valid for 12 months. The deposit is non-refundable for cancellations made less than 60 days before arrival. Cases of force majeure are handled on a case-by-case basis.
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              {/* Junior Suite / Double or Twin */}
-              <div className="border border-border p-8 hover:border-primary/50 transition-colors duration-300 bg-card relative overflow-hidden flex flex-col justify-between">
-                <div className="absolute top-0 right-0 bg-primary text-primary-foreground text-[10px] uppercase tracking-widest px-3 py-1">Popular</div>
-                <div>
-                  <h3 className="font-serif text-2xl mb-2">Junior Suite / Double</h3>
-                  <p className="text-xs uppercase tracking-widest text-muted-foreground mb-6">Double or Twin Occupancy</p>
+              <div className="mt-8 pt-4 border-t border-border/60 text-xs italic text-muted-foreground">
+                All rates are quoted per person, per night, and include the services listed. Bookings are subject to availability.
+              </div>
+            </div>
 
-                  <div className="space-y-3 text-sm text-muted-foreground font-light mb-8">
-                    <div className="flex items-center gap-2 border-b border-border/50 pb-2">
-                      <Leaf className="w-4 h-4 text-primary shrink-0" />
-                      <span>Full board: vegetarian & vegan organic meals</span>
-                    </div>
-                    <div className="flex items-center gap-2 border-b border-border/50 pb-2">
-                      <Sun className="w-4 h-4 text-primary shrink-0" />
-                      <span>Full access to Yoga Shala & rooftop practice deck</span>
-                    </div>
-                    <div className="flex items-center gap-2 border-b border-border/50 pb-2">
-                      <Moon className="w-4 h-4 text-primary shrink-0" />
-                      <span>Ensuite private bath with garden or pool view</span>
-                    </div>
-                    <div className="flex items-center gap-2 pb-2">
-                      <Calendar className="w-4 h-4 text-primary shrink-0" />
-                      <span>Extra bed options available upon request</span>
-                    </div>
-                  </div>
-                </div>
+            {/* Exclusive Domaine Hire */}
+            <div className="lg:col-span-5 bg-[#353c29] text-[#f7f3eb] p-8 md:p-10 rounded-sm relative flex flex-col justify-between border border-[#485338] shadow-md">
+              <div>
+                <span className="text-[11px] font-sans tracking-[0.25em] uppercase text-[#d4a359] font-medium block mb-3">
+                  Exclusive Use
+                </span>
+                <h3 className="font-serif text-3xl md:text-4xl mb-6 text-white leading-tight">
+                  Domaine Hire & <br />Private Events
+                </h3>
 
-                <div className="pt-4 border-t border-border">
-                  <p className="text-xs text-muted-foreground italic mb-4">
-                    Custom group quotes & seasonal availability upon request.
-                  </p>
-                  <a
-                    href="#contact"
-                    className="inline-block w-full text-center py-3 px-4 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors uppercase text-xs tracking-widest font-medium"
-                  >
-                    Inquire for Rates
-                  </a>
+                <p className="text-white/80 font-light text-sm md:text-base leading-relaxed mb-6">
+                  The entire domaine can be reserved for your group alone, whether for a retreat, a celebration or a private event. Exclusive hire is quoted individually, based on group size, event requirements, length of stay and the level of exclusivity required.
+                </p>
+
+                <div className="inline-flex items-center gap-2 py-1.5 px-3 rounded-full bg-white/10 text-xs text-[#d4a359] tracking-wider uppercase mb-8">
+                  <span>✦</span>
+                  <span>Available on request</span>
+                  <span>✦</span>
                 </div>
+              </div>
+
+              <div className="pt-6 border-t border-white/15">
+                <a
+                  href="#contact"
+                  className="inline-block w-full text-center py-3.5 px-4 bg-[#d4a359] text-black hover:bg-[#e0b26c] transition-colors uppercase text-xs tracking-widest font-semibold"
+                >
+                  Inquire for Domaine Hire
+                </a>
               </div>
             </div>
           </div>
@@ -342,7 +588,7 @@ export default function Home() {
       </section>
 
       {/* Culinary Journey */}
-      <section className="py-24 bg-secondary text-secondary-foreground relative overflow-hidden">
+      <section id="wellness" className="py-24 bg-secondary text-secondary-foreground relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 pattern-grid-lg"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-3xl mx-auto">

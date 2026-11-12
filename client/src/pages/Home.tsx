@@ -15,6 +15,7 @@ import {
   UtensilsCrossed,
 } from "lucide-react";
 import { useEffect, useState } from "react";
+import { RoomsGallery } from "@/components/RoomsGallery";
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
@@ -45,17 +46,18 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground overflow-x-hidden">
       {/* Navigation */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "bg-background/90 backdrop-blur-md py-4 shadow-sm" : "bg-transparent py-6"}`}>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "bg-background/90 backdrop-blur-md py-4 shadow-sm" : "bg-gradient-to-b from-black/60 via-black/25 to-transparent py-6"}`}>
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center gap-2">
             <img src="/images/logo.webp" alt="Daba Village Logo" className="h-12 w-auto" />
           </div>
-          <div className="hidden md:flex items-center gap-8 font-sans text-sm tracking-widest uppercase">
+          <div className={`hidden md:flex items-center gap-8 font-sans text-sm tracking-widest uppercase ${scrolled ? "text-foreground" : "text-white [text-shadow:0_1px_4px_rgba(0,0,0,0.5)]"}`}>
             <a href="#retreats" className="hover:text-primary transition-colors">Retreats</a>
             <a href="#experience" className="hover:text-primary transition-colors">Experience</a>
             <a href="#accommodation" className="hover:text-primary transition-colors">Stay</a>
+            <a href="#rooms" className="hover:text-primary transition-colors">Rooms</a>
             <a href="#wellness" className="hover:text-primary transition-colors">Wellness</a>
-            <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-none px-6">
+            <Button asChild variant="outline" className={`${scrolled ? "border-primary text-primary hover:bg-primary hover:text-primary-foreground" : "border-white bg-transparent text-white hover:bg-white hover:text-black [text-shadow:none]"} rounded-none px-6`}>
               <a href="#contact">Inquire</a>
             </Button>
           </div>
@@ -66,14 +68,14 @@ export default function Home() {
       <header className="relative h-screen w-full overflow-hidden flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/hero-handstand.jpg"
-            alt="Yoga pose by the pool"
+            src="/images/hero-meditation-pool.jpg"
+            alt="Meditating by the courtyard pool at Daba Village"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/20" />
+          <div className="absolute inset-0 bg-black/40" />
         </div>
 
-        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto [text-shadow:0_2px_12px_rgba(0,0,0,0.55)]">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -90,8 +92,8 @@ export default function Home() {
               "A sanctuary where breath meets the horizon. Reconnect with nature, restore your spirit, and find your flow in the heart of Marrakech."
             </motion.p>
             <motion.div variants={fadeIn} className="mt-8">
-              <Button className="bg-white text-black hover:bg-white/90 rounded-none px-8 py-6 text-sm tracking-widest uppercase">
-                Explore Retreats
+              <Button asChild className="bg-white text-black hover:bg-white/90 rounded-none px-8 py-6 text-sm tracking-widest uppercase">
+                <a href="#retreats">Explore Retreats</a>
               </Button>
             </motion.div>
           </motion.div>
@@ -115,15 +117,15 @@ export default function Home() {
             >
               <div className="aspect-[3/4] overflow-hidden">
                 <img
-                  src="/images/headstand-pool.jpg"
-                  alt="Yoga practice by the pool"
+                  src="/images/yoga-group-pool.jpg"
+                  alt="Group yoga practice by the courtyard pool"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />
               </div>
               <div className="absolute -bottom-10 -right-10 w-2/3 aspect-[4/3] overflow-hidden hidden md:block border-8 border-background">
                 <img
-                  src="/images/headstand-pool-2.jpg"
-                  alt="Reflection in the pool"
+                  src="/images/courtyard-pool-night.jpg"
+                  alt="The riad courtyard and pool lit up at night"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -147,9 +149,14 @@ export default function Home() {
                 Our serene property is surrounded by spacious gardens where we cultivate organic fruits and vegetables, ensuring fresh, wholesome produce is served daily to our guests. It is a place to relax, reconnect with nature, and enjoy personalized hospitality in an intimate setting.
               </p>
               <div className="pt-4">
-                <a href="#contact" className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors uppercase text-xs tracking-widest border-b border-primary pb-1">
-                  Plan Your Retreat <ArrowRight className="w-4 h-4" />
-                </a>
+                <div className="flex flex-wrap gap-8">
+                  <a href="#contact" className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors uppercase text-xs tracking-widest border-b border-primary pb-1">
+                    Plan Your Retreat <ArrowRight className="w-4 h-4" />
+                  </a>
+                  <a href="#rooms" className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors uppercase text-xs tracking-widest border-b border-primary pb-1">
+                    See the Bedrooms <ArrowRight className="w-4 h-4" />
+                  </a>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -173,19 +180,19 @@ export default function Home() {
                 title: "Yoga & Meditation",
                 desc: "Practice in our dedicated shala or on the rooftop facing the Atlas mountains. Suitable for all levels.",
                 icon: <Sun className="w-6 h-6 text-primary" />,
-                image: "/images/group-yoga-courtyard.jpg"
+                image: "/images/yoga-class-courtyard.jpg"
               },
               {
                 title: "Wellness & Spa",
                 desc: "Traditional Hammam rituals with black soap, henna art, and massage services for deep renewal.",
                 icon: <Moon className="w-6 h-6 text-primary" />,
-                image: "/images/evening-pool-relaxation.jpg"
+                image: "/images/hammam-basin.jpg"
               },
               {
                 title: "Nature & Culture",
                 desc: "Guided horse rides, cooking classes for tagine & couscous, and excursions to the Atlas or desert.",
                 icon: <Leaf className="w-6 h-6 text-primary" />,
-                image: "/images/poolside-pose.jpg"
+                image: "/images/horse-atlas-paddock.jpg"
               }
             ].map((item, index) => (
               <motion.div
@@ -526,7 +533,7 @@ export default function Home() {
 
                   <div className="pb-3 border-b border-border/60">
                     <span className="font-medium text-foreground block mb-0.5">Rooms</span>
-                    <p className="text-muted-foreground">Double or triple rooms, allocated by availability and group size.</p>
+                    <p className="text-muted-foreground">Double or triple rooms, allocated by availability and group size. <a href="#rooms" className="text-primary border-b border-primary/60">See the bedrooms</a></p>
                   </div>
 
                   <div className="pb-3 border-b border-border/60">
@@ -586,6 +593,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <RoomsGallery />
 
       {/* Culinary Journey */}
       <section id="wellness" className="py-24 bg-secondary text-secondary-foreground relative overflow-hidden">

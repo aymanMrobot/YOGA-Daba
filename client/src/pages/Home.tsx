@@ -46,18 +46,18 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground overflow-x-hidden">
       {/* Navigation */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "bg-background/90 backdrop-blur-md py-4 shadow-sm" : "bg-transparent py-6"}`}>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "bg-background/90 backdrop-blur-md py-4 shadow-sm" : "bg-gradient-to-b from-black/60 via-black/25 to-transparent py-6"}`}>
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center gap-2">
             <img src="/images/logo.webp" alt="Daba Village Logo" className="h-12 w-auto" />
           </div>
-          <div className="hidden md:flex items-center gap-8 font-sans text-sm tracking-widest uppercase">
+          <div className={`hidden md:flex items-center gap-8 font-sans text-sm tracking-widest uppercase ${scrolled ? "text-foreground" : "text-white [text-shadow:0_1px_4px_rgba(0,0,0,0.5)]"}`}>
             <a href="#retreats" className="hover:text-primary transition-colors">Retreats</a>
             <a href="#experience" className="hover:text-primary transition-colors">Experience</a>
             <a href="#accommodation" className="hover:text-primary transition-colors">Stay</a>
             <a href="#rooms" className="hover:text-primary transition-colors">Rooms</a>
             <a href="#wellness" className="hover:text-primary transition-colors">Wellness</a>
-            <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-none px-6">
+            <Button asChild variant="outline" className={`${scrolled ? "border-primary text-primary hover:bg-primary hover:text-primary-foreground" : "border-white bg-transparent text-white hover:bg-white hover:text-black [text-shadow:none]"} rounded-none px-6`}>
               <a href="#contact">Inquire</a>
             </Button>
           </div>
@@ -72,10 +72,10 @@ export default function Home() {
             alt="Meditating by the courtyard pool at Daba Village"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/30" />
+          <div className="absolute inset-0 bg-black/40" />
         </div>
 
-        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto [text-shadow:0_2px_12px_rgba(0,0,0,0.55)]">
           <motion.div
             initial="hidden"
             animate="visible"

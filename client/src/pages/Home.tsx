@@ -641,11 +641,11 @@ export default function Home() {
               <ul className="space-y-4 text-sm text-muted-foreground font-light">
                 <li>Route aurika Km 12<br />Mohamadia 9<br />tameslouht 42312</li>
                 <li>
-                  <a href="tel:+212676777790" className="hover:text-primary transition-colors block font-medium">
-                    +212 6 76 77 77 90
+                  <a href="tel:+212655699126" className="hover:text-primary transition-colors block font-medium">
+                    +212 655-699126
                   </a>
                   <a
-                    href="https://wa.me/212676777790"
+                    href="https://wa.me/212655699126"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-xs text-primary hover:underline inline-block mt-0.5"

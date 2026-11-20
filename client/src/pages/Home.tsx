@@ -133,11 +133,11 @@ export default function Home() {
       <header className="relative h-screen min-h-[640px] max-h-[920px] w-full overflow-hidden flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/yoga-savasana-dusk.jpg"
-            alt="Evening yoga practice around the lantern-lit courtyard pool at Daba Village"
-            className="w-full h-full object-cover"
+            src="/images/hero-handstand.jpg"
+            alt="Yoga headstand pose reflected in the courtyard pool at Daba Village Marrakech"
+            className="w-full h-full object-cover object-[center_35%]"
           />
-          <div className="absolute inset-0 bg-black/45" />
+          <div className="absolute inset-0 bg-black/35" />
         </div>
 
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto [text-shadow:0_2px_12px_rgba(0,0,0,0.55)]">
@@ -606,7 +606,7 @@ export default function Home() {
                 <div className="space-y-4 text-sm font-light leading-relaxed">
                   <div className="pb-3 border-b border-border/60">
                     <span className="font-medium text-foreground block mb-0.5">Group size</span>
-                    <p className="text-muted-foreground">From 10 guests up to 30 guests at the published rates.</p>
+                    <p className="text-muted-foreground">From 10 guests up to 45 guests at the published rates.</p>
                   </div>
 
                   <div className="pb-3 border-b border-border/60">
@@ -621,7 +621,7 @@ export default function Home() {
 
                   <div className="pb-3 border-b border-border/60">
                     <span className="font-medium text-foreground block mb-0.5">Larger groups</span>
-                    <p className="text-muted-foreground">Groups of more than 30 guests receive a tailored quotation based on total group size and accommodation requirements.</p>
+                    <p className="text-muted-foreground">Groups of more than 45 guests receive a tailored quotation based on total group size and accommodation requirements.</p>
                   </div>
 
                   <div className="pb-3 border-b border-border/60">

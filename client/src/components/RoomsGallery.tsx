@@ -62,6 +62,30 @@ export const ROOM_PHOTOS: RoomPhoto[] = [
     caption: "Sunken black tadelakt soaking tub paired with herringbone zellige tiles and brass taps.",
     category: "Bathrooms",
   },
+  {
+    src: "/images/rooms/room-09.jpg",
+    title: "Suite Dana — Master Canopy",
+    caption: "Carved cedar four-poster king bed, warm amber tadelakt plaster, and private garden arcade view.",
+    category: "Suites",
+  },
+  {
+    src: "/images/rooms/room-10.jpg",
+    title: "Ivory Linen Bedroom",
+    caption: "Serene ground-floor bedroom with natural cotton linens, woven brass sconces, and garden patio doors.",
+    category: "Bedrooms",
+  },
+  {
+    src: "/images/rooms/room-11.jpg",
+    title: "Crimson Earth Room",
+    caption: "Deep ochre and red tadelakt finish, handcrafted Berber headboard, and tranquil reading corner.",
+    category: "Bedrooms",
+  },
+  {
+    src: "/images/rooms/room-12.jpg",
+    title: "Olive Tadelakt Casita",
+    caption: "Airy casita suite with sage green lime plaster, artisan-woven wool cushions, and courtyard views.",
+    category: "Suites",
+  },
 ];
 
 const CATEGORIES: RoomCategory[] = ["All", "Suites", "Bedrooms", "Bathrooms"];
